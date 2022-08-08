@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const MONGO_URI  = process.env.MONGO_URI || 'mongodb+srv://Shavidini:sJgeUKZ7waCMGmCG@vehicleregistration.sjbw5wr.mongodb.net/test';
+const MONGO_URI  = process.env.MONGO_URI || 'mongodb+srv://Shavidini:sJgeUKZ7waCMGmCG@vehicleregistration.sjbw5wr.mongodb.net/?retryWrites=true&w=majority';
 
 exports.connect = () => {
   // Connecting to the database
