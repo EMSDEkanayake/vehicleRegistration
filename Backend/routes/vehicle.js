@@ -69,6 +69,29 @@ router.get("/details/read", async (req, res, next) => {
   }
 });
 
-
+//update vehicle details
+router.put("/update-details", (req, res, next) => {
+  vehicleModel
+    .updateOne(
+      { vehicleId: req.body.vehicle.vehicleId },
+      {
+        $set: {
+          vehicleVintage: req.body.vehicle.vehicleVintage,
+          vehicleOld: req.body.vehicle.vehicleOld,
+          vehicleModern: req.body.vehicle.vehicleModern,
+        },
+      }
+    )
+    .then((result) => {
+      res.json({
+        success: true,
+        message: "Update sucessful",
+        payload: {},
+      });
+    })
+    .catch((e) => {
+      res.status(400).json({ success: false, message: e.message, payload: {} });
+    });
+});
 
 module.exports = router;
