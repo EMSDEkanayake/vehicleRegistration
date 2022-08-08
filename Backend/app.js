@@ -3,7 +3,7 @@ var express = require('express');
 var dotenv = require("dotenv");
 var db = require("./configs/database");
 var path = require('path');
-var cors = require('cors')
+var cors = require('cors');
 
 var vehicleRouter = require('./routes/vehicle');
 
@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// app.use('/vehicle',vehicleRouter);
+app.use('/vehicle',vehicleRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
