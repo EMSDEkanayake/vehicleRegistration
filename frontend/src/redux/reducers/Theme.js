@@ -9,7 +9,7 @@ import {
   SWITCH_THEME,
   DIRECTION_CHANGE
 } from '../constants/Theme';
-import { THEME_CONFIG } from 'configs/AppConfig'
+import { THEME_CONFIG } from '../../configs/AppConfig'
 
 const initTheme = {
   ...THEME_CONFIG
