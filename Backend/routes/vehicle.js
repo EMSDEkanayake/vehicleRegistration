@@ -94,4 +94,22 @@ router.put("/update-details", (req, res, next) => {
     });
 });
 
+//delete vehicle details
+router.delete("/delete-details", (req, res, next) => {
+  vehicleModel
+    .deleteOne(
+      { vehicleId: req.body.vehicle.vehicleId }
+    )
+    .then((result) => {
+      res.json({
+        success: true,
+        message: "Deleted sucessful",
+        payload: {},
+      });
+    })
+    .catch((e) => {
+      res.status(400).json({ success: false, message: e.message, payload: {} });
+    });
+});
+
 module.exports = router;
